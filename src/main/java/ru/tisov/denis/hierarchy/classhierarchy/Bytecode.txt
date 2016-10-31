@@ -1,0 +1,143 @@
+Classfile /Users/denis/Documents/Java/Idea_Projects/Interview/src/main/java/ru/tisov/denis/hierarchy/classhierarchy/SomeClass.class
+  Last modified May 9, 2016; size 988 bytes
+  MD5 checksum 3dc6f68523a4e93f9a44bcfd1c82baa9
+  Compiled from "SomeClass.java"
+public class ru.tisov.denis.hierarchy.classhierarchy.SomeClass
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #16.#29        // java/lang/Object."<init>":()V
+   #2 = Class              #30            // ru/tisov/denis/hierarchy/classhierarchy/SomeClass
+   #3 = Methodref          #2.#29         // ru/tisov/denis/hierarchy/classhierarchy/SomeClass."<init>":()V
+   #4 = Methodref          #2.#31         // ru/tisov/denis/hierarchy/classhierarchy/SomeClass.go:()V
+   #5 = Class              #32            // ru/tisov/denis/hierarchy/classhierarchy/Parent
+   #6 = Methodref          #5.#29         // ru/tisov/denis/hierarchy/classhierarchy/Parent."<init>":()V
+   #7 = Class              #33            // ru/tisov/denis/hierarchy/classhierarchy/Child
+   #8 = Methodref          #7.#29         // ru/tisov/denis/hierarchy/classhierarchy/Child."<init>":()V
+   #9 = Methodref          #2.#34         // ru/tisov/denis/hierarchy/classhierarchy/SomeClass.call:(Lru/tisov/denis/hierarchy/classhierarchy/Parent;)V
+  #10 = Fieldref           #35.#36        // java/lang/System.out:Ljava/io/PrintStream;
+  #11 = String             #37            // Parent are going to be called
+  #12 = Methodref          #38.#39        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #13 = Methodref          #5.#40         // ru/tisov/denis/hierarchy/classhierarchy/Parent.call:()V
+  #14 = String             #41            // Child are going to be called
+  #15 = Methodref          #7.#40         // ru/tisov/denis/hierarchy/classhierarchy/Child.call:()V
+  #16 = Class              #42            // java/lang/Object
+  #17 = Utf8               <init>
+  #18 = Utf8               ()V
+  #19 = Utf8               Code
+  #20 = Utf8               LineNumberTable
+  #21 = Utf8               main
+  #22 = Utf8               ([Ljava/lang/String;)V
+  #23 = Utf8               go
+  #24 = Utf8               call
+  #25 = Utf8               (Lru/tisov/denis/hierarchy/classhierarchy/Parent;)V
+  #26 = Utf8               (Lru/tisov/denis/hierarchy/classhierarchy/Child;)V
+  #27 = Utf8               SourceFile
+  #28 = Utf8               SomeClass.java
+  #29 = NameAndType        #17:#18        // "<init>":()V
+  #30 = Utf8               ru/tisov/denis/hierarchy/classhierarchy/SomeClass
+  #31 = NameAndType        #23:#18        // go:()V
+  #32 = Utf8               ru/tisov/denis/hierarchy/classhierarchy/Parent
+  #33 = Utf8               ru/tisov/denis/hierarchy/classhierarchy/Child
+  #34 = NameAndType        #24:#25        // call:(Lru/tisov/denis/hierarchy/classhierarchy/Parent;)V
+  #35 = Class              #43            // java/lang/System
+  #36 = NameAndType        #44:#45        // out:Ljava/io/PrintStream;
+  #37 = Utf8               Parent are going to be called
+  #38 = Class              #46            // java/io/PrintStream
+  #39 = NameAndType        #47:#48        // println:(Ljava/lang/String;)V
+  #40 = NameAndType        #24:#18        // call:()V
+  #41 = Utf8               Child are going to be called
+  #42 = Utf8               java/lang/Object
+  #43 = Utf8               java/lang/System
+  #44 = Utf8               out
+  #45 = Utf8               Ljava/io/PrintStream;
+  #46 = Utf8               java/io/PrintStream
+  #47 = Utf8               println
+  #48 = Utf8               (Ljava/lang/String;)V
+{
+  public ru.tisov.denis.hierarchy.classhierarchy.SomeClass();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: new           #2                  // class ru/tisov/denis/hierarchy/classhierarchy/SomeClass
+         3: dup
+         4: invokespecial #3                  // Method "<init>":()V
+         7: invokespecial #4                  // Method go:()V
+        10: return
+      LineNumberTable:
+        line 6: 0
+        line 7: 10
+
+  private void go();
+    descriptor: ()V
+    flags: ACC_PRIVATE
+    Code:
+      stack=2, locals=3, args_size=1
+         0: new           #5                  // class ru/tisov/denis/hierarchy/classhierarchy/Parent
+         3: dup
+         4: invokespecial #6                  // Method ru/tisov/denis/hierarchy/classhierarchy/Parent."<init>":()V
+         7: astore_1
+         8: new           #7                  // class ru/tisov/denis/hierarchy/classhierarchy/Child
+        11: dup
+        12: invokespecial #8                  // Method ru/tisov/denis/hierarchy/classhierarchy/Child."<init>":()V
+        15: astore_2
+        16: aload_0
+        17: aload_1
+        18: invokevirtual #9                  // Method call:(Lru/tisov/denis/hierarchy/classhierarchy/Parent;)V
+        21: aload_0
+        22: aload_2
+        23: invokevirtual #9                  // Method call:(Lru/tisov/denis/hierarchy/classhierarchy/Parent;)V
+        26: return
+      LineNumberTable:
+        line 10: 0
+        line 11: 8
+        line 13: 16
+        line 14: 21
+        line 15: 26
+
+  public void call(ru.tisov.denis.hierarchy.classhierarchy.Parent);
+    descriptor: (Lru/tisov/denis/hierarchy/classhierarchy/Parent;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: getstatic     #10                 // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #11                 // String Parent are going to be called
+         5: invokevirtual #12                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: aload_1
+         9: invokevirtual #13                 // Method ru/tisov/denis/hierarchy/classhierarchy/Parent.call:()V
+        12: return
+      LineNumberTable:
+        line 19: 0
+        line 20: 8
+        line 21: 12
+
+  public void call(ru.tisov.denis.hierarchy.classhierarchy.Child);
+    descriptor: (Lru/tisov/denis/hierarchy/classhierarchy/Child;)V
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: getstatic     #10                 // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #14                 // String Child are going to be called
+         5: invokevirtual #12                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: aload_1
+         9: invokevirtual #15                 // Method ru/tisov/denis/hierarchy/classhierarchy/Child.call:()V
+        12: return
+      LineNumberTable:
+        line 24: 0
+        line 25: 8
+        line 26: 12
+}
+SourceFile: "SomeClass.java"

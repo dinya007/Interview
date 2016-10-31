@@ -1,0 +1,95 @@
+Classfile /Users/denis/Documents/Java/Idea_Projects/Interview/src/main/java/ru/tisov/denis/test/StringCompileToStringBuilder.class
+  Last modified May 22, 2016; size 650 bytes
+  MD5 checksum 582d9b794acf2d5a269695bab71edd91
+  Compiled from "StringCompileToStringBuilder.java"
+public class ru.tisov.denis.test.StringCompileToStringBuilder
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #9.#20         // java/lang/Object."<init>":()V
+   #2 = String             #21            //
+   #3 = Class              #22            // java/lang/StringBuilder
+   #4 = Methodref          #3.#20         // java/lang/StringBuilder."<init>":()V
+   #5 = Methodref          #3.#23         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #6 = Methodref          #3.#24         // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+   #7 = Methodref          #3.#25         // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #8 = Class              #26            // ru/tisov/denis/test/StringCompileToStringBuilder
+   #9 = Class              #27            // java/lang/Object
+  #10 = Utf8               <init>
+  #11 = Utf8               ()V
+  #12 = Utf8               Code
+  #13 = Utf8               LineNumberTable
+  #14 = Utf8               getString
+  #15 = Utf8               (ILjava/lang/String;)Ljava/lang/String;
+  #16 = Utf8               StackMapTable
+  #17 = Class              #28            // java/lang/String
+  #18 = Utf8               SourceFile
+  #19 = Utf8               StringCompileToStringBuilder.java
+  #20 = NameAndType        #10:#11        // "<init>":()V
+  #21 = Utf8
+  #22 = Utf8               java/lang/StringBuilder
+  #23 = NameAndType        #29:#30        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #24 = NameAndType        #29:#31        // append:(I)Ljava/lang/StringBuilder;
+  #25 = NameAndType        #32:#33        // toString:()Ljava/lang/String;
+  #26 = Utf8               ru/tisov/denis/test/StringCompileToStringBuilder
+  #27 = Utf8               java/lang/Object
+  #28 = Utf8               java/lang/String
+  #29 = Utf8               append
+  #30 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #31 = Utf8               (I)Ljava/lang/StringBuilder;
+  #32 = Utf8               toString
+  #33 = Utf8               ()Ljava/lang/String;
+{
+  public ru.tisov.denis.test.StringCompileToStringBuilder();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 3: 0
+
+  public java.lang.String getString(int, java.lang.String);
+    descriptor: (ILjava/lang/String;)Ljava/lang/String;
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=5, args_size=3
+         0: ldc           #2                  // String
+         2: astore_3
+         3: iconst_0
+         4: istore        4
+         6: iload         4
+         8: iload_1
+         9: if_icmpge     42
+        12: new           #3                  // class java/lang/StringBuilder
+        15: dup
+        16: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
+        19: aload_3
+        20: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        23: iload         4
+        25: invokevirtual #6                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        28: aload_2
+        29: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        32: invokevirtual #7                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        35: astore_3
+        36: iinc          4, 1
+        39: goto          6
+        42: aload_3
+        43: areturn
+      LineNumberTable:
+        line 7: 0
+        line 8: 3
+        line 9: 12
+        line 8: 36
+        line 11: 42
+      StackMapTable: number_of_entries = 2
+        frame_type = 253 /* append */
+          offset_delta = 6
+          locals = [ class java/lang/String, int ]
+        frame_type = 250 /* chop */
+          offset_delta = 35
+}
+SourceFile: "StringCompileToStringBuilder.java"
