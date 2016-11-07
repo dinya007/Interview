@@ -45,10 +45,10 @@ public class RotateMatrix {
 //        matrix[2][2] = 8;
 
         System.out.println(Arrays.deepToString(matrix));
-        System.out.println(Arrays.deepToString(rotateMatrix(matrix)));
+        System.out.println(Arrays.deepToString(booRotateMatrix(matrix)));
     }
 
-    private static int[][] rotateMatrix(int[][] matrix) {
+    private static int[][] myRotateMatrix(int[][] matrix) {
         int leftTopCorner = 0;
         int rightBottomCorner = SIZE - 1;
 
@@ -81,6 +81,31 @@ public class RotateMatrix {
         matrix[i2][j2] = matrix[i1][j1] + matrix[i2][j2];
         matrix[i1][j1] = matrix[i2][j2] - matrix[i1][j1];
         matrix[i2][j2] = matrix[i2][j2] - matrix[i1][j1];
+    }
+
+    private static int[][] booRotateMatrix(int[][] matrix) {
+        for (int layer = 0; layer < SIZE / 2; layer++) {
+            int first = layer;
+            int last = SIZE - 1 - layer;
+
+            for (int i = first; i < last; i++) {
+                int offset = i - first;
+                int top = matrix[first][i]; //save top
+
+                // left -> top
+                matrix[first][i] = matrix[last - offset][first];
+
+                // bottom -> left
+                matrix[last - offset][first] = matrix[last][last - offset];
+
+                // right -> bottom
+                matrix[last][last - offset] = matrix[i][last];
+
+                // top -> right
+                matrix[i][last] = top; //right <- saved top
+            }
+        }
+        return matrix;
     }
 
 }

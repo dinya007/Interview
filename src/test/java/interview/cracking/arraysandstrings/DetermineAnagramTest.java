@@ -3,8 +3,6 @@ package interview.cracking.arraysandstrings;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class DetermineAnagramTest {
     @Test
     public void isAnagram() throws Exception {
