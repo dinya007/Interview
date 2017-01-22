@@ -3,14 +3,22 @@ package interview.cracking.bitmanipulation;
 public class BitNumberDifferenceBetweenTwoIntegers {
 
     public static void main(String[] args) {
-        System.out.println(Integer.toBinaryString(31));
-        System.out.println(Integer.toBinaryString(14));
+        int a = 31;
+        System.out.println(Integer.toBinaryString(a));
+        int b = 14;
+        System.out.println(Integer.toBinaryString(b));
 
-        String string = "asdas.asd";
+        System.out.println("Difference: " + determineDifference(a, b));
 
-        System.out.println(string.substring(0, string.indexOf(".")));
-        System.out.println(string.substring(string.indexOf(".") + 1));
 
+    }
+
+    private static int determineDifference(int a, int b) {
+        int result = 0;
+        for (int c = a ^ b; c != 0; c = c >> 1) {
+            result += c & 1;
+        }
+        return result;
     }
 
 }
