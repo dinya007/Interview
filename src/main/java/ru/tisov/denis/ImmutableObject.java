@@ -8,7 +8,6 @@ import java.util.concurrent.Executors;
 public class ImmutableObject  <T>  {
 
 
-
     public static void main(String[] args) {
 
         ArrayList<Object> list = new ArrayList<>();
