@@ -1,5 +1,8 @@
 public class A {
 
+    static {
+        System.out.println("A");
+    }
     public A (){
         print();
     }
@@ -16,7 +19,14 @@ public class A {
 
 class B extends A {
 
+    static {
+        System.out.println("B");
+    }
     double x = Math.PI;
+
+    {
+
+    }
 
     public B() {
         print();
