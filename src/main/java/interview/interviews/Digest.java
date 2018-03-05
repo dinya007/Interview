@@ -9,9 +9,9 @@ public abstract class Digest {
     public byte[] digest(byte[] input) {
         byte[] result = cache.get(input); // ←-
         if (result == null) {
-            synchronized(cache) { // ←--
+            synchronized (cache) { // ←--
                 result = cache.get(input); // ←-;
-                if (result  == null) {
+                if (result == null) {
                     result = doDigest(input);
                     cache.put(input, result);
                 }

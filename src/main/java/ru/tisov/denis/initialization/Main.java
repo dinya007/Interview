@@ -6,13 +6,7 @@ public class Main {
         int b = initialize("static block");
     }
 
-    public Main() {
-        int e = initialize("Constructor field");
-    }
-
     private static int a = initialize("static field");
-
-
 
     {
         int d = initialize("object block");
@@ -20,6 +14,10 @@ public class Main {
 
     private int c = initialize("object field");
 
+
+    public Main() {
+        int e = initialize("Constructor field");
+    }
 
 
 

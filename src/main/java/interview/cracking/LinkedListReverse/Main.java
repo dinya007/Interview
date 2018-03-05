@@ -1,6 +1,6 @@
 package interview.cracking.LinkedListReverse;
 
-import interview.cracking.datastructures.MyLinkedList;
+import interview.cracking.datastructures.hashtable1.MyLinkedList;
 
 public class Main {
 

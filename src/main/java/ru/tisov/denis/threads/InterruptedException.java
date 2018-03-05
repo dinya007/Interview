@@ -46,7 +46,8 @@ public class InterruptedException {
                 try {
                     this.sleep(1500);
                 } catch (java.lang.InterruptedException e) {
-                    System.out.println("Interrupted Exception was catched");
+                    System.out.println("Interrupted Exception was caught");
+                    return;
                 }
                 ++var;
             }

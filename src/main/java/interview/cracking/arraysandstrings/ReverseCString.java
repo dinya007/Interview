@@ -5,7 +5,7 @@ public class ReverseCString {
     private static char END_CHARACTER = '|';
 
     public static void main(String[] args) {
-        char[] string = new char[]{'a','b','c','d',END_CHARACTER};
+        char[] string = new char[]{'a', 'b', 'c', 'd', END_CHARACTER};
 
         int currentIndex = 1;
         int prevIndex = 0;

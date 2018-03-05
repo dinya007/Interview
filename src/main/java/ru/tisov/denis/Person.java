@@ -1,6 +1,5 @@
 package ru.tisov.denis;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.TreeSet;
@@ -37,7 +36,7 @@ public class Person {
                 }
             });
 
-            class MethodClass{
+            class MethodClass {
 
             }
 

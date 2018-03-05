@@ -6,23 +6,11 @@ public class ChangeFinalFieldExample {
 
 
     public static void main(String[] args) throws IllegalAccessException, NoSuchFieldException {
-        new ChangeFinalFieldExample().go();
-        new ChangeFinalFieldExample().go2();
+        new ChangeFinalFieldExample().setInt();
+        new ChangeFinalFieldExample().setStringBuilder();
     }
 
-    private void go2() throws NoSuchFieldException, IllegalAccessException {
-        ClassB classB = new ClassB();
-
-        System.out.println("Before write value: " + classB.getValue());
-
-        Field field = classB.getClass().getDeclaredField("value");
-        field.setAccessible(true);
-        field.set(classB, new StringBuilder("10"));
-
-        System.out.println("After write value: " + classB.getValue());
-    }
-
-    private void go() throws IllegalAccessException, NoSuchFieldException {
+    private void setInt() throws IllegalAccessException, NoSuchFieldException {
         ClassA classA = new ClassA();
 
         System.out.println("Before write a: " + classA.getA());
@@ -35,15 +23,27 @@ public class ChangeFinalFieldExample {
 
     }
 
+    private void setStringBuilder() throws NoSuchFieldException, IllegalAccessException {
+        ClassB classB = new ClassB();
+
+        System.out.println("Before write value: " + classB.getValue());
+
+        Field field = classB.getClass().getDeclaredField("value");
+        field.setAccessible(true);
+        field.set(classB, new StringBuilder("10"));
+
+        System.out.println("After write value: " + classB.getValue());
+    }
+
     class ClassA {
 
 //        That's different case that described in http://stackoverflow.com/questions/4516381/changing-private-final-fields-via-reflection
-//        private final int a = 5;
+        private final int a = 5;
 
-        private final int a;
+//        private final int a;
 
         ClassA() {
-            a = 5;
+//            a = 5;
         }
 
 
@@ -56,9 +56,8 @@ public class ChangeFinalFieldExample {
         private final StringBuilder value = new StringBuilder("init value");
 
 //        private final StringBuilder value;
-//
 //        public ClassB() {
-//            value= new StringBuilder("5");
+//            value= new StringBuilder("init value");
 //        }
 
         public StringBuilder getValue() {

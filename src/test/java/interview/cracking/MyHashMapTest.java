@@ -1,6 +1,6 @@
 package interview.cracking;
 
-import interview.cracking.datastructures.MyHashMap;
+import interview.cracking.datastructures.hashtable1.MyHashMap;
 import org.junit.Assert;
 import org.junit.Test;
 
