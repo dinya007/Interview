@@ -1,6 +1,6 @@
 package interview.cracking.arraysandstrings;
 
-public class RemoveNotUniqueCharactersInString {
+public class RemoveDuplicatedCharactersInString {
 
     private static int checker = 0;
     private static int lastIndex = 0;
