@@ -1,6 +1,9 @@
 package interview.cracking.algorithm;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class BreadthFirstSearch {
 
@@ -43,7 +46,7 @@ public class BreadthFirstSearch {
 //        }
 //    }
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         Node station1 = new Node("1", null, null);
         Node station2 = new Node("2", station1, null);
         Node station3 = new Node("3", station1, station2);
@@ -53,7 +56,7 @@ public class BreadthFirstSearch {
 
         BreadthFirstSearch bfs = new BreadthFirstSearch(station6, station1);
 
-        if(bfs.compute())
+        if (bfs.compute())
             System.out.print("Path Found!");
     }
 
@@ -61,14 +64,14 @@ public class BreadthFirstSearch {
     Node startNode;
     Node goalNode;
 
-    public BreadthFirstSearch(Node start, Node goalNode){
+    public BreadthFirstSearch(Node start, Node goalNode) {
         this.startNode = start;
         this.goalNode = goalNode;
     }
 
-    public boolean compute(){
+    public boolean compute() {
 
-        if(this.startNode.equals(goalNode)){
+        if (this.startNode.equals(goalNode)) {
             System.out.println("Goal Node Found!");
             System.out.println(startNode);
         }
@@ -78,14 +81,13 @@ public class BreadthFirstSearch {
         queue.add(this.startNode);
         explored.add(startNode);
 
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             Node current = queue.remove();
-            if(current.equals(this.goalNode)) {
+            if (current.equals(this.goalNode)) {
                 System.out.println(explored);
                 return true;
-            }
-            else{
-                if(current.getChildren().isEmpty())
+            } else {
+                if (current.getChildren().isEmpty())
                     return false;
                 else
                     queue.addAll(current.getChildren());
