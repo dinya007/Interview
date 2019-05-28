@@ -3,10 +3,21 @@ package ru.tisov.denis.concurrent;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ReentarntLockTest {
+public class ReentrantLockTest {
 
     public static void main(String[] args) throws InterruptedException {
-        new ReentarntLockTest().go();
+        System.out.println(stringSize(null));
+//        new ReentrantLockTest().go();
+    }
+
+    public static int stringSize(Object s) {
+        try {
+            return s.toString().length();
+        } catch (Exception ex) {
+            return -2;
+        } finally {
+            return -1;
+        }
     }
 
     private void go() throws InterruptedException {
