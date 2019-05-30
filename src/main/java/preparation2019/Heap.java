@@ -1,20 +1,32 @@
-package preparation2019.datastructure;
+package preparation2019;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Heap<T extends Comparable<T>> {
 
     final List<T> heap;
+    final HeapType heapType;
 
-    private Heap(List<T> array) {
+    private Heap(HeapType heapType) {
+        this.heapType = heapType;
+        heap = new ArrayList<>();
+    }
+
+    private Heap(HeapType heapType, List<T> array) {
+        this.heapType = heapType;
         heap = array;
         for (int i = array.size() / 2 - 1; i >= 0; i--) {
             siftDown(i);
         }
     }
 
-    public static <T extends Comparable<T>> Heap<T> buildHeap(List<T> array) {
-        return new Heap<>(array);
+    public static <T extends Comparable<T>> Heap<T> buildHeap(HeapType heapType) {
+        return new Heap<>(heapType);
+    }
+
+    public static <T extends Comparable<T>> Heap<T> buildHeap(HeapType heapType, List<T> array) {
+        return new Heap<>(heapType, array);
     }
 
     public void push(T element) {
@@ -41,10 +53,25 @@ public class Heap<T extends Comparable<T>> {
         return result;
     }
 
+    public T get() {
+        if (heap.isEmpty()) {
+            return null;
+        }
+        return heap.get(0);
+    }
+
+    public int size() {
+        return heap.size();
+    }
+
+    public boolean isEmpty() {
+        return heap.isEmpty();
+    }
+
     private void siftUp(int index) {
         int parentIndex = (index - 1) / 2;
         while (index > 0) {
-            if (heap.get(parentIndex).compareTo(heap.get(index)) < 0) {
+            if (heapType.compare(heap.get(parentIndex), heap.get(index)) < 0) {
                 swap(parentIndex, index);
                 index = parentIndex;
                 parentIndex = (index - 1) / 2;
@@ -64,14 +91,14 @@ public class Heap<T extends Comparable<T>> {
         if (exists(rightChildIndex)) {
             T leftChildValue = heap.get(leftChildIndex);
             T rightChildValue = heap.get(rightChildIndex);
-            if (leftChildValue.compareTo(rightChildValue) > 0) {
+            if (heapType.compare(leftChildValue, rightChildValue) > 0) {
                 maxChildIndex = leftChildIndex;
-            } else if (rightChildValue.compareTo(leftChildValue) > 0) {
+            } else if (heapType.compare(rightChildIndex, leftChildIndex) > 0) {
                 maxChildIndex = rightChildIndex;
             } else {
                 return;
             }
-        } else if (exists(leftChildIndex) && heap.get(leftChildIndex).compareTo(indexValue) >= 0) {
+        } else if (exists(leftChildIndex) && heapType.compare(heap.get(leftChildIndex), indexValue) >= 0) {
             maxChildIndex = leftChildIndex;
         } else {
             return;
