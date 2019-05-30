@@ -11,27 +11,20 @@ public class RemoveStringCharacterDuplication {
         Character currentValue = string[current];
         int next = current;
         Character nextValue = currentValue;
-        Integer insertIndex = null;
+        int insertIndex = 1;
 
         while (currentValue != null) {
             while (nextValue != null) {
                 ++next;
                 nextValue = string[next];
-
-
-
-
-
-
-                if (currentValue == nextValue && insertIndex == null) {
-                    insertIndex = next;
+                if (currentValue != nextValue) {
+                    string[insertIndex] = nextValue;
+                    ++insertIndex;
                 }
-                string[insertIndex] = nextValue;
-
             }
             ++current;
             currentValue = string[current];
-            insertIndex = 0;
+            insertIndex = current + 1;
             next = current;
             nextValue = currentValue;
         }
